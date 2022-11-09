@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <clocale>
+#include < stdint.h >
+#include <cstdint>
 
 // Задание 1
 class Power
@@ -47,9 +49,43 @@ public:
     }
 };
 
+// Задание 2
+class RGBA
+{
+private:
+
+    // Переменные со значениями по умолчанию
+    std::uint16_t m_red   = 0;
+    std::uint16_t m_green = 0;
+    std::uint16_t m_blue  = 0;
+    std::uint16_t m_alpha = 255;
+
+public: 
+
+    // Конструктор с параметрами
+    RGBA(std::uint16_t new_red, std::uint16_t new_green, std::uint16_t new_blue, std::uint16_t new_alpha)
+    {
+        m_red = new_red;
+        m_green = new_green;
+        m_blue = new_blue;
+        m_alpha = new_alpha;
+    }
+
+    // Конструктор без параметров
+    RGBA()
+    {}
+
+    // Вывод на экран переменных
+    void print()
+    {
+        std::cout << "red   = " << m_red << std::endl << "green = " << m_green << std::endl <<  "blue  = " <<
+            m_blue << std::endl << "alpha = " << m_alpha;
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    
+
 }
 
