@@ -3,8 +3,11 @@
 
 #include <iostream>
 #include <clocale>
-#include < stdint.h >
+#include <stdint.h>
 #include <cstdint>
+
+//Размер стека для задания 3
+#define StSize 9
 
 // Задание 1
 class Power
@@ -83,9 +86,68 @@ public:
     }
 };
 
+
+//Задание 3
+class stack
+{
+private:
+    //Счетчик
+    size_t co = 0;
+    //Массив стека
+    int STarr[10] = {0};
+
+public:
+    //Сбросс стека
+    void reset()
+    {
+        //Стирание всех значений стека
+        for (size_t i = 0; i <= StSize; i++)
+            STarr[i] = 0;
+        //Сбросс четчика
+        co = 0;
+    }
+    //Добавление значения в стек
+    bool push(int NNum)
+    {
+        //Если стек полный
+        if (co >= 9)
+        {
+            //Если добавление невозможно
+            return false;
+        }
+        else
+        {
+            //Присвоение нового значения элементу массива с номером счетчика, увеличение счетчика
+            STarr[co] = NNum;
+            co++;
+            //Если произошло добавление
+            return true;
+        }
+    }
+    //Вытягивание значения
+    void pop()
+    {
+        if (co <= 0)
+            std::cout << " Стек пуст " << std::endl;
+        else
+        {
+            STarr[co] = 0;
+            co--;
+        }
+    }
+    //Вывод значений
+    void print()
+    {
+        std::cout << " ( ";
+        for (size_t i = 0; i < co; i++)
+            std::cout <<  STarr[i] << " ";
+        std::cout << ")" << std::endl;
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
-
 }
+
 
