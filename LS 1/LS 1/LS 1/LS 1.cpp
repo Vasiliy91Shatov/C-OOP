@@ -1,9 +1,6 @@
-﻿// LS 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿
 #include <iostream>
 #include <clocale>
-#include <stdint.h>
 #include <cstdint>
 
 //Размер стека для задания 3
